@@ -19,4 +19,3 @@ A visualization tool for various AI search algorithms solving a maze.
 - 20127415 - Mai Gia Chung
 - 21127450 - Võ Trung Tín
 
-Course: Fundamentals of
