@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maze Solver - AI Search Algorithms</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav-bar">
+        <h1>Group 2 - Lab01 Searching</h1>
+        <a
+          href="https://github.com/tdthien106/HCMUS-IntroAI-Searching-Algorithm"
+          class="github-button"
+        >
+          <img
+            src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+            alt="GitHub"
+            width="24"
+          />
+          View Source
+        </a>
+      </div>
+      <div class="controls">
+        <button onclick="clearAndSolve('BFS')">BFS</button>
+        <button onclick="clearAndSolve('DFS')">DFS</button>
+        <button onclick="clearAndSolve('UCS')">UCS</button>
+        <button onclick="clearAndSolve('A*')">A*</button>
+        <button onclick="clearAndSolve('IDDFS')">IDDFS</button>
+        <button onclick="clearAndSolve('Bi-directional')">
+          Bi-directional
+        </button>
+        <button onclick="clearAndSolve('Beam')">Beam Search (k=3)</button>
+        <button onclick="clearAndSolve('IDA*')">IDA*</button>
+      </div>
+
+      <div class="reset-container">
+        <button onclick="resetMaze()" class="reset-btn">RESET MAZE</button>
+      </div>
+
+      <div class="speed-control">
+        <label for="speed">Animation Speed:</label>
+        <select id="speed" onchange="changeSpeed(this.value)">
+          <option value="100">Slow</option>
+          <option value="50" selected>Medium</option>
+          <option value="10">Fast</option>
+          <option value="0">Instant</option>
+        </select>
+      </div>
+
+      <div id="game" class="game"></div>
+
+      <div class="stats">
+        <p><strong>Algorithm:</strong> <span id="algorithm-name">-</span></p>
+        <p><strong>Status:</strong> <span id="status">Ready</span></p>
+        <p>
+          <strong>Explored Nodes:</strong> <span id="explored-count">0</span>
+        </p>
+        <p><strong>Path Length:</strong> <span id="path-length">0</span></p>
+        <p><strong>Time Taken:</strong> <span id="time-taken">0</span> ms</p>
+      </div>
+
+      <div class="footer">
+        <p>Project by:</p>
+        <p><strong>20127330 - Trịnh Đức Thiên</strong></p>
+        <p><strong>20127415 - Mai Gia Chung</strong></p>
+        <p><strong>21127450 - Võ Trung Tín</strong></p>
+        <p>Course: Introduction Artificial Intelligence</p>
+      </div>
+    </div>
+
+    <script src="js/utils/priorityQueue.js"></script>
+    <script src="js/utils/helpers.js"></script>
+
+    <script src="js/maze.js"></script>
+
+    <script src="js/algorithms/bfs.js"></script>
+    <script src="js/algorithms/dfs.js"></script>
+    <script src="js/algorithms/ucs.js"></script>
+    <script src="js/algorithms/astar.js"></script>
+    <script src="js/algorithms/iddfs.js"></script>
+    <script src="js/algorithms/bidirectional.js"></script>
+    <script src="js/algorithms/beam.js"></script>
+    <script src="js/algorithms/idastar.js"></script>
+  </body>
+</html>
