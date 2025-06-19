@@ -1,4 +1,5 @@
 # Maze Solver - AI Search Algorithms
+# LAB 01 - Search Algorithms
 
 A visualization tool for various AI search algorithms solving a maze.
 
