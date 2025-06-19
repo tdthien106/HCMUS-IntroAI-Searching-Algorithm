@@ -7,6 +7,7 @@ A visualization tool for various AI search algorithms solving a maze.
 - Breadth-First Search (BFS)
 - Depth-First Search (DFS)
 - Uniform Cost Search (UCS)
+- A* Search
 - Iterative Deepening DFS (IDDFS)
 - Bi-directional Search
 - Beam Search
