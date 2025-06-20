@@ -63,27 +63,28 @@ class Maze {
     getNeighbors(state) {
       const { i, j } = state;
       const neighbors = [];
-  
+      // 4 hướng di chuyển có thể (up/down/left/right)
       const directions = [
-        { i: i - 1, j },
-        { i: i + 1, j },
-        { i, j: j - 1 },
-        { i, j: j + 1 },
+        { i: i - 1, j }, //Lên
+        { i: i + 1, j }, //Xuống
+        { i, j: j - 1 }, //Trái
+        { i, j: j + 1 }, //Phải
       ];
   
       for (const dir of directions) {
+        // Kiểm tra 3 điều kiện để tạo edge:
+        // 1. Không vượt biên mê cung
+        // 2. Ô lân cận không phải tường
         if (
-          dir.i >= 0 &&
-          dir.i < this.height &&
-          dir.j >= 0 &&
-          dir.j < this.width &&
+          dir.i >= 0 && dir.i < this.height && //Check biên dọc
+          dir.j >= 0 && dir.j < this.width && //Check biên ngang
           !this.walls[dir.i][dir.j]
         ) {
-          neighbors.push(dir);
+          neighbors.push(dir); //Thêm vào danh sách node kề
         }
       }
   
-      return neighbors;
+      return neighbors; //Trả về các node có thể di chuyển từ (i, j)
     }
   
     areStatesEqual(stateA, stateB) {
@@ -184,3 +185,7 @@ class Maze {
   window.onload = function() {
     resetMaze();
   };
+  
+  const maze = `# A #
+                #   B
+                # # #`;
