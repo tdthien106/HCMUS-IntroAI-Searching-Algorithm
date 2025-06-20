@@ -12,14 +12,14 @@ class Maze {
       this.mazeElement.style.gridTemplateRows = `repeat(${this.height}, 1fr)`;
       this.mazeElement.style.gridTemplateColumns = `repeat(${this.width}, 1fr)`;
   
-      this.walls = [];
+      this.walls = []; // Ma trận boolean (true = tường, false = ô trống)
       for (let i = 0; i < this.height; i++) {
         const row = [];
         for (let j = 0; j < this.width; j++) {
           const cellIndex = i * this.width + j;
           switch (mazeRows[i][j]) {
             case "A":
-              this.start = { i, j };
+              this.start = { i, j }; // Node bắt đầu
               this.mazeElement.insertAdjacentHTML(
                 "beforeend",
                 '<div class="start"></div>'
@@ -27,7 +27,7 @@ class Maze {
               row.push(false);
               break;
             case "B":
-              this.goal = { i, j };
+              this.goal = { i, j };// Node đích
               this.mazeElement.insertAdjacentHTML(
                 "beforeend",
                 '<div class="goal"></div>'
@@ -39,14 +39,14 @@ class Maze {
                 "beforeend",
                 '<div class="space"></div>'
               );
-              row.push(false);
+              row.push(false);  // Node có thể di chuyển qua
               break;
             default:
               this.mazeElement.insertAdjacentHTML(
                 "beforeend",
                 '<div class="wall"></div>'
               );
-              row.push(true);
+              row.push(true); // Node tường (#)
           }
           this.cells.push({ i, j });
         }
