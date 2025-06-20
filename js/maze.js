@@ -185,7 +185,3 @@ class Maze {
   window.onload = function() {
     resetMaze();
   };
-  
-  const maze = `# A #
-                #   B
-                # # #`;
